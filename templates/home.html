@@ -1,0 +1,163 @@
+{% load static %}
+<DOCTYPE html>
+    <head>
+        <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+
+
+
+        <style>
+            body{
+                background-color:grey;
+
+            }
+            h1{
+                margin:20px;
+                color: blue;
+                text-size:40px;
+    
+            }
+            h2{
+                color:violet;
+                text-size:20px;
+            }
+            p{
+                text-size:15px;
+            }
+            .nav{
+                background-color: Red;
+                overflow: hidden; 
+                top:70px;
+                width:100%;
+            }
+            .nav a{
+                float: center;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 66px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+            .nav a:hover{
+                background-color: #ddd;
+                color: black;
+            }
+            .nav a.active {
+                background-color: grey;
+                color: white;
+              }
+              .inner-footer{
+                margin:0;
+                padding: 0;
+                background-color: DarkSalmon;
+            
+            }
+            
+            .outer-footer{
+                padding: 10px;
+                text-align:  center;
+                color: white;
+                font-size: 18px;
+                background-color: #3f3f3f;
+            }
+
+            .carousel-inner{
+                height:400px;
+                width:1350px;
+                background-color:white;
+              }
+            
+              .carousel-item {
+                position: absolute;
+                object-fit:cover;
+                top: 0;
+                left: 0;
+                min-height:400px;  
+            } 
+            .container{
+                background-color:grey;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h1><b>NeoNatal Project</b></h1>
+        <div class="nav">
+        <a class="active" href="#home">Home</a>
+        <a href="{% url 'book' %}">Book Appointment</a>
+        <a href="{% url 'services' %}">Our Services</a>
+        <a href="{% url 'register' %}">Doctor Site</a>
+        <a href="{% url 'contactUs' %}">Contact Us</a>
+        <a href="{% url 'messages' %}">Notifications</a>
+        </div>
+
+            <p>Welcome to NeoNatal site ,we provide platform for booking ,clinic visits,child checkups.<br>
+            </p>
+            
+
+            <div>
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="{% static 'mother.jpg' %}" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="{% static 'mother1.jpg' %}" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="{% static 'mother2.jpg' %}" alt="Third slide">
+                  </div>
+                </div>
+              </div>
+            </div>
+              
+            <div class="container">
+                <div class="card">
+                    <h2><b>Our Mission</b></h2>
+                    <p>We provide maternal health programmes to save lives in childbirth in Africa.<br>
+                        At Maternity Worldwide we have a vision of a world where all women, wherever they live, can give birth safely and without fear.  We need your help to make that vision a reality.
+                    </p>
+                    <h2><b>Our Vision</b></h2>
+                    <p>Maternity Worldwide’s vision is of a world in which all women and their babies can access safe and appropriate childbirth regardless of where they live.</p>
+                    <h2><b>Our Values</b></h2>
+                    <p>We believe that access to quality maternity and newborn services is a right and makes a vital contribution to the well-being of both individuals and communities.<br>
+                        We value the skills, passion, dynamism and professionalism of our team.  
+                        None of our work would be possible without the hard work and commitment of our partners in the countries where we work, our professional, office based and fundraising volunteers, our staff team, our Board of Trustees and of course you, our supporters and advocates.  
+                        Together we are working towards a world where women and girls no longer die needlessly in childbirth.
+                    </p>
+                    <h2><b>Our Purpose</b></h2>
+                    <p>We exist to help reduce the number of women dying or injured in childbirth.</p>
+                </div>
+                <div class="box">
+    
+                </div>
+
+              </div>
+            <footer>
+                <div class="inner-footer">
+                    <div class="quick-links">
+                        <ul>
+                        <li class="quick-items"><a href="#">Home</a></li>
+                        <li class="quick-items"><a href="{% url 'book' %}">Book Appointment</a></li>
+                        <li class="quick-items"><a href="{% url 'services' %}">Our Services</a></li>
+                        <li class="quick-items"><a href="{% url 'register' %}">Doctor Site</a></li>
+                        <li class="quick-items"><a href="{% url 'contactUs' %}">Contact Us</a></li>
+                        <li class="quick-items"><a href="{% url 'messages' %}">Notifications</a></li>
+                        
+                        </ul>
+                    </div>
+                    
+                    <div class="outer-footer">
+                        Copyright &copy;@Abedtati2022 Project <i class="fas fa-copyright    "></i>
+                    </div>
+            </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>   
+</body>
+</html>
