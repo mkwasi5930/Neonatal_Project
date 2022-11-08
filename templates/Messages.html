@@ -1,12 +1,29 @@
+{% load static %}
 <html>
     <head>
         <!-- Bootstrap CSS -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
       <style>
+        body{
+            background-image:url("{% static 'doctor.jpeg'%}");
+            background-repeat: no-repeat center fixed;
+            background-size: cover;
+            background-color:gray;
+        }
         .nav{
             background-color: Red;
             overflow: hidden; 
+        }
+        h1{
+            margin:20px;
+            color: blue;
+            text-size:40px;
+
+        }
+        h2{
+            color:violet;
+            text-size:20px;
         }
         .nav a{
             float: center;
@@ -14,7 +31,7 @@
             text-align: center;
             padding: 14px 66px;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 17px;
         }
         .nav a:hover{
             background-color: #ddd;
@@ -38,6 +55,16 @@
             font-size: 18px;
             background-color: #3f3f3f;
         }
+        .webcam{
+            height:100%;
+        }
+        h3{
+            color:blue;
+            font-size:18px;
+        }
+        p{
+            color:smoke;
+        }
       </style>
 
     </head>
@@ -50,7 +77,15 @@
         <a href="{% url 'register' %}">Doctor Site</a>
         <a href="{% url 'contactUs' %}">Contact Us</a>
         <a class="active" href="#messages">Notifications</a>
+        </div>
 
+        
+           <h2><b>News Timeline.</b></h2>
+        <div class="webcam">
+            {% for New in News %}
+            <h3>About</h3>-<p>{{ New.about }}.</p><br>
+            <h3>Description</h3>-<p>{{ New.description}}.</p>
+            {% endfor %}
         </div>
 
         <footer>

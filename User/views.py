@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.contrib.auth import login as dj_login
 from django.contrib.auth.forms import AuthenticationForm 
 from django.shortcuts import HttpResponse
+
+from Doctor.models import News
 from .forms import NewUserForm
 
 from User.forms import BookForm
@@ -41,7 +43,9 @@ def contactUsPage(request):
     return render(request,'contactUs.html',context)
 
 def notification(request):
+    New = News.objects.all()
     context={
+        'News':New
 
     }
     return render(request,'Messages.html',context)

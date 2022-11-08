@@ -56,3 +56,8 @@ class DoctorInfor(models.Model):
 
     def __str__(self)->str:
         return self.firstname
+
+class News(models.Model):
+    posted_on= models.DateTimeField(auto_now=True)
+    about= models.CharField(max_length = 50)
+    description = models.TextField(max_length= 10000)
